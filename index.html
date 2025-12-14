@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スマホスワイプギャラリー</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<style>
+  body { margin: 0; font-family: sans-serif; background-color: #000; }
+  .swiper {
+    width: 100%;
+    height: 100vh; /* 画面いっぱいに表示 */
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* 余白の背景色 */
+  }
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* これで見切れずに全体表示 */
+  }
+</style>
+</head>
+<body>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="img1.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="img2.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="img3.jpg" alt=""></div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',  // 横スワイプ
+  loop: true,               // 最後まで行ったらループ
+  speed: 500,               // スライド切り替え速度
+  pagination: { el: '.swiper-pagination', clickable: true },
+});
+</script>
+
+</body>
+</html>
